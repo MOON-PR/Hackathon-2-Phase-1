@@ -1,63 +1,198 @@
-# Console Todo Application
+# 📝 Console Todo Application — Phase I
 
-An in-memory Python console-based todo application that demonstrates a full agentic development workflow.
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
+![Python](https://img.shields.io/badge/python-3.13%2B-blue)
+![Phase](https://img.shields.io/badge/phase-I-orange)
+![Architecture](https://img.shields.io/badge/architecture-clean-success)
 
-## Features
+> **In-Memory · Python · Console · Agentic Development**
 
-- Add, list, update, delete, and mark todos as complete/incomplete
-- All data stored in memory (no persistence)
-- Console-based user interface
-- Clear status indicators for todos
-- Input validation and error handling
+A clean, minimal **Python console-based Todo application** built as **Phase I** of a multi-phase system.  
+This phase focuses on **core CRUD logic, clean architecture, and a spec-driven agentic workflow**.
 
-## Requirements
+---
 
-- Python 3.13+
+## ✨ Why This Project Exists
 
-## Installation
+This is **not** “just another Todo app.”
 
-1. Clone or download the repository
-2. Ensure Python 3.13+ is installed
+It is a **reference-quality Phase I implementation** designed to demonstrate:
 
-## Usage
+- Spec-first development
+- Agent-driven planning & implementation
+- Deterministic, testable business logic
+- Architecture that scales *without rewrites*
 
+No frameworks.  
+No persistence.  
+No manual coding.
+
+---
+
+## 🧠 Agentic Development Workflow
+
+```text
+/specify  →  /plan  →  /tasks  →  Claude Code
+   ↓           ↓        ↓           ↓
+ Scope       Architecture  Execution   Working App
+This repository represents the final output of Phase I in that workflow.
+
+🚀 Features (Phase I)
+✔ Add todos (title + description)
+✔ List todos with status indicators
+✔ Update todo details
+✔ Mark todos as complete / incomplete
+✔ Delete todos by ID
+
+⚠️ All data is stored only in memory.
+Restarting the app clears all todos — by design.
+
+🎞️ CLI Demo (GIF-Style)
+text
+Copy code
+▶ python src/cli/console_app.py
+
+📝 Todo Application
+──────────────────
+1. Add Todo
+2. List Todos
+3. Update Todo
+4. Mark Complete / Incomplete
+5. Delete Todo
+6. Exit
+text
+Copy code
+▶ Add Todo
+Title: Buy groceries
+Description: Milk, eggs, bread
+
+✅ Todo added successfully!
+text
+Copy code
+▶ List Todos
+
+[1] Buy groceries
+    Status: ⏳ Pending
+    Description: Milk, eggs, bread
+text
+Copy code
+▶ Mark Complete
+
+✔ Todo marked as completed!
+text
+Copy code
+▶ List Todos
+
+[1] Buy groceries
+    Status: ✅ Completed
+(Deterministic, predictable, boring — exactly how core logic should be.)
+
+🧩 Tech Stack
+Category	Choice
+Language	Python 3.13+
+Interface	Console / CLI
+Storage	In-memory (Python data structures)
+Tooling	Agentic Dev Stack, Claude Code
+Style	Clean Architecture, PEP-8
+
+⚙️ Installation
+bash
+Copy code
+git clone <repo-url>
+cd console-todo-app
+python --version
+No dependencies.
+No configuration.
+Just Python.
+
+▶️ Usage
 Run the application:
 
-```bash
+bash
+Copy code
 python src/cli/console_app.py
-```
+Navigate using numeric menu options and follow prompts.
 
-Follow the on-screen menu prompts to:
-1. Add new todos
-2. List all todos
-3. Update todo details
-4. Mark todos as complete/incomplete
-5. Delete todos
+🏗️ Architecture
+Phase I follows a layered, framework-agnostic architecture:
 
-## Architecture
+text
+Copy code
+User Input
+   ↓
+Console UI (CLI)
+   ↓
+TodoService (Business Logic)
+   ↓
+TodoRepository (In-Memory Store)
+   ↓
+Todo Model
+Architectural Guarantees
+Business logic does not depend on the CLI
 
-The application follows a layered architecture:
+Storage can be swapped without refactoring logic
 
-- **Models**: Data structures (Todo model)
-- **Services**: Business logic (TodoService)
-- **Repository**: Data access (TodoRepository)
-- **CLI**: User interface (ConsoleApp)
+Deterministic execution
 
-## Project Structure
+Phase II–ready by design
 
-```
+📁 Project Structure
+text
+Copy code
 src/
 ├── models/
-│   └── todo.py          # Todo data structure and validation
+│   └── todo.py          # Todo entity & validation
 ├── services/
-│   ├── todo_service.py  # Business logic for todo operations
-│   └── repository.py    # In-memory storage operations
+│   ├── todo_service.py  # Business logic
+│   └── repository.py    # In-memory storage
 ├── cli/
-│   └── console_app.py   # Main console application and menu system
+│   └── console_app.py   # CLI menu & interaction loop
 └── lib/
-    └── utils.py         # Utility functions and error handling
-```
+    └── utils.py         # Helpers & input handling
+🧪 Testing (Phase I)
+Testing is performed via:
 
-## Testing
+Manual CLI interaction
 
-The application can be tested by running it and performing all supported operations through the console interface.
+Validation of all CRUD flows
+
+Edge-case input handling
+
+Agent-based spec & plan review
+
+Automated tests are intentionally deferred to later phases.
+
+🎯 Phase I Success Criteria
+✔ All 5 basic Todo features implemented
+✔ Strict in-memory behavior (no files, no DB)
+✔ Clean, modular Python code
+✔ Stable and user-friendly CLI
+✔ Architecture ready for future phases
+
+🚫 Explicitly Out of Scope
+Web or GUI interfaces
+
+File or database persistence
+
+Authentication or multi-user support
+
+AI or chatbot features
+
+Deployment, containers, or cloud infra
+
+🤝 Contributing
+Contributions are welcome within Phase I scope.
+
+Guidelines
+Follow clean architecture principles
+
+Keep logic framework-agnostic
+
+Maintain deterministic behavior
+
+No persistence or external dependencies
+
+Match existing code style (PEP-8)
+
+Please open an issue before submitting large changes.
+
