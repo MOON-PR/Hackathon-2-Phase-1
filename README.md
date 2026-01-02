@@ -35,21 +35,26 @@ No manual coding.
 /specify  →  /plan  →  /tasks  →  Claude Code
    ↓           ↓        ↓           ↓
  Scope       Architecture  Execution   Working App
-This repository represents the final output of Phase I in that workflow.
+```
 
-🚀 Features (Phase I)
-✔ Add todos (title + description)
-✔ List todos with status indicators
-✔ Update todo details
-✔ Mark todos as complete / incomplete
-✔ Delete todos by ID
+---
 
-⚠️ All data is stored only in memory.
-Restarting the app clears all todos — by design.
+## 🚀 Features (Phase I)
 
-🎞️ CLI Demo (GIF-Style)
-text
-Copy code
+✔ Add todos (title + description)  
+✔ List todos with status indicators  
+✔ Update todo details  
+✔ Mark todos as complete / incomplete  
+✔ Delete todos by ID  
+
+> ⚠️ All data is stored **only in memory**.  
+> Restarting the app clears all todos — by design.
+
+---
+
+## 🎞️ CLI Demo (GIF-Style)
+
+```text
 ▶ python src/cli/console_app.py
 
 📝 Todo Application
@@ -60,64 +65,72 @@ Copy code
 4. Mark Complete / Incomplete
 5. Delete Todo
 6. Exit
-text
-Copy code
+```
+
+```text
 ▶ Add Todo
 Title: Buy groceries
 Description: Milk, eggs, bread
 
 ✅ Todo added successfully!
-text
-Copy code
+```
+
+```text
 ▶ List Todos
 
 [1] Buy groceries
     Status: ⏳ Pending
     Description: Milk, eggs, bread
-text
-Copy code
+```
+
+```text
 ▶ Mark Complete
 
 ✔ Todo marked as completed!
-text
-Copy code
+```
+
+```text
 ▶ List Todos
 
 [1] Buy groceries
     Status: ✅ Completed
-(Deterministic, predictable, boring — exactly how core logic should be.)
+```
 
-🧩 Tech Stack
-Category	Choice
-Language	Python 3.13+
-Interface	Console / CLI
-Storage	In-memory (Python data structures)
-Tooling	Agentic Dev Stack, Claude Code
-Style	Clean Architecture, PEP-8
+---
 
-⚙️ Installation
-bash
-Copy code
+## 🧩 Tech Stack
+
+| Category | Choice |
+|--------|-------|
+| Language | Python **3.13+** |
+| Interface | Console / CLI |
+| Storage | In-memory (Python data structures) |
+| Tooling | Agentic Dev Stack, Claude Code |
+| Style | Clean Architecture, PEP-8 |
+
+---
+
+## ⚙️ Installation
+
+```bash
 git clone <repo-url>
 cd console-todo-app
 python --version
-No dependencies.
-No configuration.
-Just Python.
+```
 
-▶️ Usage
-Run the application:
+---
 
-bash
-Copy code
+## ▶️ Usage
+
+```bash
 python src/cli/console_app.py
-Navigate using numeric menu options and follow prompts.
+```
 
-🏗️ Architecture
-Phase I follows a layered, framework-agnostic architecture:
+---
 
-text
-Copy code
+## 🏗️ Architecture
+
+```text
 User Input
    ↓
 Console UI (CLI)
@@ -127,72 +140,39 @@ TodoService (Business Logic)
 TodoRepository (In-Memory Store)
    ↓
 Todo Model
-Architectural Guarantees
-Business logic does not depend on the CLI
+```
 
-Storage can be swapped without refactoring logic
+---
 
-Deterministic execution
+## 📁 Project Structure
 
-Phase II–ready by design
-
-📁 Project Structure
-text
-Copy code
+```text
 src/
 ├── models/
-│   └── todo.py          # Todo entity & validation
+│   └── todo.py
 ├── services/
-│   ├── todo_service.py  # Business logic
-│   └── repository.py    # In-memory storage
+│   ├── todo_service.py
+│   └── repository.py
 ├── cli/
-│   └── console_app.py   # CLI menu & interaction loop
+│   └── console_app.py
 └── lib/
-    └── utils.py         # Helpers & input handling
-🧪 Testing (Phase I)
-Testing is performed via:
+    └── utils.py
+```
 
-Manual CLI interaction
+---
 
-Validation of all CRUD flows
+## 🤝 Contributing
 
-Edge-case input handling
+- Keep changes within Phase I scope
+- Follow clean architecture principles
+- No persistence or external dependencies
+- Match PEP-8 style
 
-Agent-based spec & plan review
+---
 
-Automated tests are intentionally deferred to later phases.
+## 📜 License
 
-🎯 Phase I Success Criteria
-✔ All 5 basic Todo features implemented
-✔ Strict in-memory behavior (no files, no DB)
-✔ Clean, modular Python code
-✔ Stable and user-friendly CLI
-✔ Architecture ready for future phases
+MIT — free to use, modify, and extend.
 
-🚫 Explicitly Out of Scope
-Web or GUI interfaces
-
-File or database persistence
-
-Authentication or multi-user support
-
-AI or chatbot features
-
-Deployment, containers, or cloud infra
-
-🤝 Contributing
-Contributions are welcome within Phase I scope.
-
-Guidelines
-Follow clean architecture principles
-
-Keep logic framework-agnostic
-
-Maintain deterministic behavior
-
-No persistence or external dependencies
-
-Match existing code style (PEP-8)
-
-Please open an issue before submitting large changes.
-
+Phase I complete.
+Simple by design. Solid by intention.
