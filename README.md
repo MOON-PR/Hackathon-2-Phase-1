@@ -173,5 +173,4 @@ src/
 
 MIT — free to use, modify, and extend.
 
-Phase I complete.
-Simple by design. Solid by intention.
+> *Phase I complete. Simple by design. Solid by intention.*
