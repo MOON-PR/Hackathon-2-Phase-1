@@ -113,8 +113,7 @@ Description: Milk, eggs, bread
 ## ⚙️ Installation
 
 ```bash
-git clone <repo-url>
-cd console-todo-app
+git clone <https://github.com/MOON-PR/Hackathon-2-Phase-1>
 python --version
 ```
 
@@ -123,7 +122,7 @@ python --version
 ## ▶️ Usage
 
 ```bash
-python src/cli/console_app.py
+python -m main
 ```
 
 ---
